@@ -5,7 +5,7 @@ const UserModel = mongoose.model('user')
 
 mongoose
   .connect(
-    `mongodb+srv://test:Nhb7kqUIgzinyXd6@cluster0.efpwj.mongodb.net/seeder?retryWrites=true&w=majority`,
+    process.env.MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

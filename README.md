@@ -34,6 +34,7 @@ Vendor can only see event that assigned to them, and HR can only see the event t
 ```sh
 npm i
 npm heroku-postbuild
+npm run seed
 ```
 
 Both frontend and backend app run with single command

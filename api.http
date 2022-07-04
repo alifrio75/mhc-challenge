@@ -1,0 +1,70 @@
+@hostname = localhost
+@port = 5000
+@host = http://{{hostname}}:{{port}}/api
+@contentType = application/json
+
+###
+# @companyname = MHCCompanion
+#@companyid = 62c142746bfe4b364e000211
+@companyname = MHCHealthCare
+@companyid = 62c11f069fbd7ef698e49bc2
+@companyname = MHCHealthCare 2
+
+###
+
+POST {{host}}/createUser HTTP/1.1
+content-type: {{contentType}}
+
+{
+    "company": "{{companyname}}",
+    "email": "admin@{{companyname}}.com.sg",
+    "password": "{{companyname}}",
+    "role": "Vendor"
+}
+###
+
+POST {{host}}/user/login HTTP/1.1
+content-type: {{contentType}}
+
+{
+    "company": "{{companyname}}",
+    "password": "{{companyname}}"
+}
+
+###
+
+GET {{host}}/user/vendor HTTP/1.1
+content-type: {{contentType}}
+
+###
+
+POST {{host}}/event/create HTTP/1.1
+content-type: {{contentType}}
+
+{
+    "company": "{{companyid}}",
+    "status": "pending",
+    "requestedDate": ["date 1", "date 2"],
+    "approvedDate": "",
+    "activity": "Die",
+    "address": "address",
+    "location" : {
+        "lat": 1.1236007,
+        "lng": 104.0165679
+    }
+}
+
+###
+GET {{host}}/event/{{companyid}}?status=pending&page=1 HTTP/1.1
+content-type: {{contentType}}
+
+###
+PUT {{host}}/event/62c1269de1e757bec07fa478 HTTP/1.1
+content-type: {{contentType}}
+
+{
+    "status": "Approved",
+    "activity": "Yoga"
+}
+
+###

@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Introduction" />
+
+<style>
+  {`
+    .tip {
+      display: inline-block;
+      border-radius: 1em;
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: 700;
+      background: #E7FDD8;
+      color: #66BF3C;
+      padding: 4px 12px;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+
+    .tip-wrapper {
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .tip-wrapper code {
+      font-size: 12px;
+      display: inline-block;
+    }
+  `}
+</style>
+
+# Welcome to MHC UI Library
+
+<div className="tip-wrapper">
+  <span className="tip">!</span>This page is for development purpose only and wont be compiled to production build.
+</div>
+
+
+The purpose of this Library is to approach modern javascript framework as it should be, in a modern way!. Dev often missed the sole reason of using a modern javascript framework where we can design ui component with less dependencies between component inside a page.
+Component are not just about code-splitting, its more than that.
+Forcing dev to develop with this modular approach will help dev evaluate the use of state and props.
+
+Also the other purpose of this UI Library is to accomplised Test Driven Development in term of frontend development. Instead of using Unit-test as base of TDD we are using E2E test as the base of this platform testing.
+The usage of unit test in frontend are often obsolete when it cames to ui rapid changes in order to support business, really often developer encounter test case in unit test where we have to see whats the output in the ui, which when its finally time to add E2E Test for regression autmated test QA Dev will rewrite the same test in E2E test.
+This will cause problem when there is changes in frontend, both test must be updated and it would not be ideal at all. Other thing about test is coverage, at the point there is no complete solution to meassuring test code coverage in frontend unit-test. So why bother using unit test at all. 
+
+The last thing about this approach is what business, QA, and product designer team will really like, and that is parallel development. By splitting works into specific component, QA can simultaneously checking and testing cosmetics works. So early that it will shorten SI development phase and ofcourse test pahse also. Frontend wont have to wait the api or mock api to be done, all team can work simultaneously.
+This approach will also help backend a lot by letting them check when designing final API output, which data to provide to frontend. And one way or another, this approach will also prevent writing business logic in frontend as it is considered a bad practice. 
+
+And the final boss of every modern frontend work, a design system! Without anykind of modular component development, achieving design system is just a dream.

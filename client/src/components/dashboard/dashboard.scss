@@ -1,0 +1,6 @@
+.dashboard__wrapper {
+    display: flex;
+    & > * {
+        flex: 1;
+    }
+}
